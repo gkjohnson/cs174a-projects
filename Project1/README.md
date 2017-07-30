@@ -15,13 +15,13 @@
 
 ## Controls
 ```
-Q ESC         Quit
+Q, ESC        Quit
 
 A             Increase rotation
 D             Decrease rotation
 S             Reset rotation to 0
 Mouse Drag    Rotate to mouse position
 
-1 - 9         Change color
+1-9           Change color
 SPACE         Change displayed fractal
 ```
