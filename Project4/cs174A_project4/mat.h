@@ -11,13 +11,6 @@
 #include <cmath>
 
 #include "windows\glew\include\GL\glew.h"
-#if defined(__APPLE__)
-#include <GLUT/glut.h>
-#elif defined(_WIN32)
-#include "windows/glut/glut.h"
-#else
-#include <GL/glut.h>
-#endif
 
 #define M_PI  3.14159265358979323846
 const GLfloat  DegreesToRadians = M_PI / 180.0;
