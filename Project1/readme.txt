@@ -1,0 +1,24 @@
+Project 1:
+Used glutHarness Template
+Done:
+- Implemented 'q' and 'Q' to exit the program
+- Implemented shaders - source within character arrays in the main.cpp file
+- Implemented the Sierpinski Gasket
+- Implemented in a hopefully understandable manner
+
+Extra Credit:
+- Implemented a GLSL uniform variable that can be used to change the display color
+- Implemented a method to change the color (keys 1-9 change the color)
+- Implemented two extra fractal functions (tree fractal and snowflake fractal) that can switched between by pressing the spacebar
+- Implemented a GLSL uniform variable that can be used to change the rotation
+
+Controls:
+'Q', 'q', 'esc' : Quit
+
+'A', 'a' : increase rotation
+'D', 'd' : decrease rotation
+'S', 's' : reset rotation to 0
+Mouse click and drag : rotate to mouse position
+
+'1' - '9' : Change Color
+'SPACE' : Change Displayed Fractal

@@ -1,0 +1,230 @@
+1.1 Vectors:
+- vector is magnitude + direction
+- can add two vectors -> head to tail / parallelogram A+B => (a1+b1,a2+b2)
+- can multiply -> t*v => (tv1, tv2)
+	- same direction but changed magnitude
+	- negative t revereses the direction of the vector
+- two nonzero vectors that go in the same direction (negative or otherwise) are parallel
+- in a coordinate system, all vectors eminate from the origin
+	Properties of a vector follow from addition and multiplication (def of a vector space):
+		- Commutative: for all vectors x and y, x+y=y+x
+		- Associative: for all vectors x, y, and z, (x+y)+z=x+(y+z)
+		- Identity: there exists a vector denoted 0 such that x+0=x for each vector x
+		- Inverse: for each vector x, there is a vector y such taht x+y=0
+		- Identity: for each vector x, 1*x=x
+		- Associative: for each pair of real numbers a and b and each vector x, (ab)x=a(bx)
+		- Distributive: For each real number a and each pair of vectors x and y, a(x+y) = ax+ay
+		- Distributive: for each pait of real numbers a and b and each vector x, (a+b)x=ax+bx
+		
+- the above holds true for vectors in space as well (3D+)
+Equation for a line:
+	u,v are vectors. X is a point. c is a constant in R
+	x=u+c*v
+Equation for a plane:
+	u,v,w are vectors. X is a point. c, k are constants
+	x=u+k*v+c*w
+	
+1.2 Vector Spaces:
+- other algebraic systems define the same properties that we defined in the last chapter for vectors
+- Vector spaces are defined over a field F. 
+DFN: in vector spaces there are unique elements x+y for x,y in V and ax for a in F
+	Properties of a Vector Space such that the previous conditions hold:
+		VS1 - For all x, y in V, x+y=y+x (commutative)
+		VS2 - For all x, y, z in V, (x+y)+z=x+(y+z) (associative)
+		VS3 - There exists an element in V denoted by 0 such that x+0=x for each x in V (identity)
+		VS4 - For each element x in V there exists an element y in V such that x+y=0 (inverse)
+		VS5 - for each element x in V, 1x=x (identity)
+		VS6 - for each pair of elements a, b in F and each element x in V, (ab)x=a(bx) (associative)
+		VS7 - for each element a in F and each pair of elements x, y in V, a(x+y)=ax+ay (distributive)
+		VS8 - For each pair of elements a, b in F and each element x in V, (a+b)x=ax+bx (distributive)
+- Elements of F are called scalars and the elements of V are called vectors (being used to describe any element in a vector space)
+- Every vector space is regarded as being over a field F
+- in describing a vector space it is necessary to define the scalar multiplication and addition operations
+- (a1, a2, ... , an) with "components" or "entries" from F is called an "n-tuple"
+	Examples of Vector Spaces
+		- F^n (any tuple of n entries from field F)
+		- Matrices
+		- f(set S -> field F) - Set of all functions from nonempty set S to Field F
+			- two functions f and g in f(S, F) are called equal if f(s)=g(s) for s in S
+			- Addition: (f+g)(s)=f(s)+g(s) for f and g in f(S,F) and s in F
+			- scalar multiplication: cf(s)=c[f(s)]
+		- Polynomials
+			f(x) = anx^n+...+a1x^1+c
+			- degree is said to be n
+			- f and g are the same if the coefficients match and the degree is the same
+		- a sequence o(n) onto F is a function from positive integers n = 1,2...
+- All vector space axioms must be proven to prove that a vector space holds
+- function spaces:
+	- f+g = (f+g)(s) => f(s)+g(s). this is the part that is broken up into components
+
+1.2 Theorems:
+	THM 1.1: Cancellation Law for Vector Addition
+		- if x,y z are vectors in vector space V such that x+z=y+z, then x=y
+	CRLRY 1: The vector 0 described in VS3 is unique
+	CRLRY 2: The vector y described in VS4 is unique (additive inverse)
+	THM 1.2: In any vector space V, the following statements are true:
+		- 0x=0 for each x in V
+		- (-a)x=-(ax)=a(-x) for each a in F and each x in V
+		- a0=0 for each a in F
+1.3 Subspaces:
+DFN: A subset W of a vector space V over a field F is called a subspace
+of V if W is a vector space over F with the operations of addition and scalar
+multiplication defined on V
+- V and {0} are considered subspaces of V - {0} is called the zero subspace
+- VS1,2,5,6,7,8 hold for all vectors in V (and therefore the vectors in the subspace) so it is not necessary to verify for the subspace
+- the following properties must be proven for a subspace:
+	1 x+y in W whenever x and y are in W (W is closed under addition)
+	2 cx in W wheneve c is in F and x is in W (W is closed under scalar multiplication)
+	3 W has a zero vector (same vector as in V)
+	4 Each vector in W has an additive inverse in W
+- The union of two subspaces of V is not necessarily a subspace
+	- it contains 0 and is closed under mult, but not under addition
+	- only a subspace if one of the two subspaces that are uniting is a subspace of the other
+Matrices:
+	- the transpose of a matrix is the same matrix but the rows interchanges
+		- [1 2]t = [1 3]
+		  [3 4]	   [2 4]
+	- a symmetric is that such that At=A (must be square)
+	- the set of all symmetric Mnxn matrices is a subspace of all Mnxn matrices
+		- the 0 Mnxn matrix is symmetrical
+
+- When verifying addition and mult ensure that the resulting element strictly fits in W - consider cases in with some entries may cancel out
+		
+		
+1.3 Theorems:
+	THM 1.3: Let V be a vector space and W a subset of V. Then W is a
+	subspaceof V if and only if the following three conditions hold for
+	the operations defined in V
+	a. 0 is in W
+	b. x+y is in W whenever x and y are in W
+	c. cx is in W whenever c is in F and x is in W
+		- b and c hold because scalar mult and addition from V are still applicable
+		- 0 must be unique
+		- an inverse must exist because you can multiply the vector by -1 as implied by b
+	THM 1.4 Any intersection of subspaces of a vector space V is a subspace of V
+		- C is a collection of subspaces (all contain 0) in V
+		- W is the intersection of those subspaces
+		- x,y are in all subspaces in C, a in F
+		- therefore x,y are in W
+		- C is closed under scalar mult and addition, so x+y and ax must also be in all C, so x+y and ax are in W
+1.4 Linear Combinations and Systems of Linear Equations
+DFN Linear Combination
+	Let V be a vector space and S a nonempty subset of V. A vector v in V is called a linear combination of vectors
+	of S if there exist a finite number of vectors u1, u2, ... un in S and scalars a1, a2, ... an in F such that
+	v=a1u1+a2u2+... anun. in this case we also say that v is a linear combination of u1,u2, ... un and call a1,a2,... an
+	the coefficients of the linear combination
+- A vector v is said to be a linear combination of u1...un if the solution to a1u1+...+anun is non zero for a1...an
+- can form a set of equations to use and solve for a1...an
+- operations that can be made on the equations:
+	- Interchanging the order of any two equations in the system
+	- multiplying any equation in the system by a nonzero constant
+	- adding a constant multiple of any equation to another equation in the system
+- goal state:
+	- the first nonzero coefficient in each equation is one
+	- if an unknown is the first uknown with a nonzero coefficient in some equation then that unknown occurs wit ha zero coefficient
+		in each of the other equations
+	- the first unknown with a nonzero coefficient in any equation has a larger subscript than the first unknown with a nonzero
+		coefficient in any preceeding equation
+- if any of the equations turns out inconsistant ie 0=10 then there is no solution and it is not a linear combination
+
+DFN Span
+	Let S be a nonempty subset of a vector space V. The span of S, denoted by span(S), is the set consisting of all linear combinations of the
+	vectors in S. For convenience we define span(0/) to be {0}
+- A span is a subspace
+DFN Generates (Spans)
+	A subset S of a vector space V generates (or spans) V if span(S)=V. In this case, we also say that the vectors of S generate (or span) V.
+	
+1.4 Theorems
+	THM 1.5: the span of any subset S of a vector space V is a subspace of V. Moreover, any subspace of V that contains S must also contain the span of S
+
+1.5 Linear Dependence and Linear Independence
+DFN Linearly Dependent
+	A subset of a vector space is called linearly dependent if there exist a finite number of distince vectors u1, u2, ..., un in S and scalars
+	a1, a2, ..., an are not all zero for a1u1+a2u2+...+anun=0
+- a1=a2=...=an=0 is a trivial representation because it cancels out all of the vectors. To be linearly dependent, there must be a non trivial solution
+DFN Linearly Independent
+	A subset S of a vector space that is not linearly dependent is called linearly independent. As before, we also say that the vectors of S are 
+	linearly independent
+	Facts:
+		- The empty set is linearly independent, for linearly dependent stes must be nonempty
+		- a set consisting of a single nonzero vector is linearly independent. For if {u} is alinearly dependent, then au=0 for some nonzero scalar a
+			thus:
+				u=a^-1 (au) = a^-1 *0=0
+		- a set is linearly independent if and only if the only representations of 0 as linear combinations of its vectors are trivial representations
+- for a set of vectors u1...un, a1...an must be a1=...=an=0 as the only solution for a1u1+...+anun=0
+- Whether or not Subset S of V is linearly dependent/independent relates heavily to whether or not it is the smallest possible generating set
+- if no proper subset of S generates the span of S, then S must be linearly independent
+
+1.5 Theorems:
+	THM 1.6: Let V be a vector space, and let S1 be a subset of S2 be a subset of V. If S1 is linearly dependent, then S2 is linearly dependent
+	Corollary: Let V be a vector space, and let S1 be a subset of S2 be a subset of V. If S2 is linearly independent, then S1 is linearly independent
+	
+	THM 1.7: Let S be a linearly independent subset of a vector space V, and let v be a vector in V that is not in S. Then S union {v} is linearly
+	dependent if and only if {v} is in the span(S)
+
+1.6 Bases and Dimension
+DFN Basis
+	A basis B fir a vector space V is a linearly independent subset of V that generates V. If B is a basis for V, we also say that the vectors of B form a basis for V
+- F^n denotes a standard vectors space over the field. R^2 etc = (x,y)
+- Pn(x) is the set of all polynomials of degree n. The standard basis is {1, x^2, ... , x^n}
+- P(x) is the set of all polynomials. The set is NOT finite, so the basis is {1,x^2,...}
+- not every vector space has a finite basis
+
+DFN Dimension
+	A vector space is called "finite-dimensional" if it has a basis consisting of a finite number of vectors. The unique number of vectors in each
+	basis for V is called the dimension of V and is denoted by dim(V). A vector space that is not finite-dimensional is called inifite-dimensional.
+
+	- basis is a linearly independent set of V that contains the same amount of vectors as V has dim
+	- every generating set can be reduced to a basis
+	- every linearly independent set can be added to to form a basis
+	- A linearly independent set that generates V is a basis of V
+	
+1.6 Theorems
+	THM 1.8: Let V be a vector space and B={u1,u2, ... un} be a subset of V. Then B is a basis for V if and only if each v in V can be uniquely expressed as a linear
+	combination of vectors of B, that is, can be expresed in the form
+		v=a1u1+a2u2+...+anun
+	for unique scalars a1,a2,...,an
+		- to verify that an element must be unique in some way, use subtraction to 0 and show that a=b
+	
+	THM 1.9: If a vecetor space V is generated by aa finite set S, then some subset of S is a basis for V. Hence V has a finite basis
+	
+	THM 1.10: Let V be a vector space that is generated by a set G containing exactly n vectors and let L be a linearly independent subset of V containing exactly m
+	vectors. Then m<=n and there exists a subset H of G containing exactly n-m vectors such that L union H generates V *** REREAD
+	
+	CRLRY 1: Let V be a vector space having a finite basis. Then every basis for V contains the same number for vectors
+	CRLRY 2: Let V be a vecotr space with dimension n
+		a. Any finite generating set for V contains at least n vectors, and a generating set for V that contains exactly n vectors is a basis for V
+		b. Any linearly independent subset of V that contains exactly n vctors is a basis for V
+		c. Every linearly independent subset of V can be extended to a basis for V
+	
+	THM 1.11: Let W be a subspace of a finite-dimensional vector space V. Then W is finite-dimensional and dim(W)<=dim(V). Moreover
+	dim(W)=dim(V), then V=W
+	CRLRY 1: If W is a subspace of a finite-dimensional vector space V, then any basis for W can be extended to a basis for V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
