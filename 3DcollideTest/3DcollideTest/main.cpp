@@ -10,10 +10,14 @@
 #include "CameraEntity.h"
 #include "planet.h"
 
-
-#include "GL/glew.h"
-#include "GL/freeglut.h"
-#include "GL/freeglut_ext.h"
+#include "windows\glew\include\GL\glew.h"
+#if defined(__APPLE__)
+#include <GLUT/glut.h>
+#elif defined(_WIN32)
+#include "windows/glut/glut.h"
+#else
+#include <GL/glut.h>
+#endif
 
 #include "gameobject.h"
 
@@ -354,6 +358,11 @@ GLuint initShader(const char* vShaderSource, const char* fShaderSource){
 	glGetShaderiv( vShader, GL_COMPILE_STATUS, &compiled );
 	if(!compiled){
 		std::cout<<"Error compiling Vertex Shader";
+
+        char buffer[512];
+        glGetShaderInfoLog(vShader, 512, NULL, buffer);
+        std::cout << buffer << std::endl;
+
 		exit(EXIT_FAILURE);
 	}
 	glAttachShader( program, vShader );
@@ -367,7 +376,12 @@ GLuint initShader(const char* vShaderSource, const char* fShaderSource){
 	glGetShaderiv( fShader, GL_COMPILE_STATUS, &compiled );
 	if(!compiled){
 		std::cout<<"Error compiling Fragment Shader";
-		exit(EXIT_FAILURE);
+
+        char buffer[512];
+        glGetShaderInfoLog(fShader, 512, NULL, buffer);
+        std::cout << buffer << std::endl;
+
+        exit(EXIT_FAILURE);
 	}
 	glAttachShader( program, fShader );
 

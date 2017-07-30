@@ -2,13 +2,6 @@
 #define H_WORLDOBJECT
 
 #include "windows\glew\include\GL\glew.h"
-#if defined(__APPLE__)
-#include <GLUT/glut.h>
-#elif defined(_WIN32)
-#include "windows/glut/glut.h"
-#else
-#include <GL/glut.h>
-#endif
 
 #include "vec.h"
 #include "mat.h"
