@@ -30,14 +30,16 @@ const char* VERTEX_SHADER_SOURCE="\
 									fPos.w=0;\
 									if(gouraud){\
 										\
-										lightPos.w=0;\
-										camPos.w=0;\
-										vec4 lightVector=normalize(lightPos-fPos);\
-										vec4 viewDir=normalize(camPos-fPos);\
+									    vec4 lp = lightPos;\
+                                        lp.w = 0;\
+                                        vec4 cp = camPos;\
+                                        cp.w = 0;\
+										vec4 lightVector=normalize(lp-fPos);\
+										vec4 viewDir=normalize(cp-fPos);\
 										\
 										vec4 amb=ambientColor;\
-										vec4 difMult=clamp(dot(vNormal,lightVector),vec4(0,0,0,0),vec4(1,1,1,1));\
-										vec4 specMult=pow(clamp(dot(vNormal,normalize(viewDir+lightVector)),vec4(0,0,0,0),vec4(1,1,1,1)),shininess);\
+										float difMult=clamp(dot(vNormal,lightVector),0,1);\
+										float specMult=pow(clamp(dot(vNormal,normalize(viewDir+lightVector)),0,1),shininess);\
 										if(shininess==0||dot(vNormal,lightVector)<0){specMult=0;}\
 										\
 										fColor=amb+difMult*diffuseColor*lightColor+specMult*difMult*lightColor;\
@@ -45,7 +47,7 @@ const char* VERTEX_SHADER_SOURCE="\
 									}\
 									}";
 //Fragment Shader Source Code
-const char* FRAGMENT_SHADER_SOURCE="\
+const char* FRAGMENT_SHADER_SOURCE = "\
 								  uniform vec4 diffuseColor;\
 								  uniform vec4 lightColor;\
 								  uniform vec4 ambientColor;\
@@ -64,14 +66,16 @@ const char* FRAGMENT_SHADER_SOURCE="\
 								  if(gouraud){\
 								  gl_FragColor=fColor;\
 								  }else{\
-									  lightPos.w=0;\
-									  camPos.w=0;\
-									  vec4 lightVector=normalize(lightPos-fPos);\
-									  vec4 viewDir=normalize(camPos-fPos);\
+									  vec4 lp = lightPos;\
+                                      lp.w = 0;\
+                                      vec4 cp = camPos;\
+                                      cp.w = 0;\
+									  vec4 lightVector=normalize(lp-fPos);\
+									  vec4 viewDir=normalize(cp-fPos);\
 									  \
 									  vec4 amb=ambientColor;\
-									  vec4 difMult=clamp(dot(fNormal,lightVector),vec4(0,0,0,0),vec4(1,1,1,1));\
-									  vec4 specMult=pow(clamp(dot(fNormal,normalize(viewDir+lightVector)),vec4(0,0,0,0),vec4(1,1,1,1)),shininess);\
+									  float difMult=clamp(dot(fNormal,lightVector),0,1);\
+									  float specMult=pow(clamp(dot(fNormal,normalize(viewDir+lightVector)),0,1),shininess);\
 									  if(shininess==0||dot(fNormal,lightVector)<0){specMult=0;}\
 									  \
 									 gl_FragColor=amb+difMult*diffuseColor*lightColor+specMult*difMult*lightColor;\
