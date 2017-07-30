@@ -1,5 +1,7 @@
-Project 4:
-Done:
+# Texture Sampling
+
+## Assignment Notes
+#### Done
 - Implemented 'q', 'Q', esc to exit the program
 - loaded a .png image file in with the DevIL library
 - textured a quad with texture coordinates 0,0 to 1,1
@@ -8,19 +10,21 @@ Done:
 - 'w' and 'W' can be used to move the camera forward
 - 's' and 'S' can be used to move the camera back
 
-Controls:
-'Q', 'q', esc : Quit
+## Controls
+```
+Q, ESC        Quit
 
-'W' 'w' : move camera forward
-'S' 's' : move camera backward
-'A' 'a' : move camera left
-'D' 'd' : move camera right
+W             Move camera forward
+S             Move camera backward
+A             Move camera left
+D             Move camera right
 
-'UP' : move camera up
-'DOWN' : move camera down
+UP            Move camera up
+DOWN          Move camera down
 
-'R' 'r' : resets the camera to its initial settings
+R             Reset camera to initial settings
 
-'F' : Toggle mouse control of the camera
+F             Toggle mouse control of the camera
 
-Mouse move : (when mouse control is enabled) rotate the camera's view in the direction of the mouse's movement
+Mouse move    Rotate the camera's view in the direction of the mouse's movement (when mouse control is enabled)
+```
