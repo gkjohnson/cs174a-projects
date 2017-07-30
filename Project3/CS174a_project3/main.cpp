@@ -349,7 +349,7 @@ void initGlut(int& argc, char** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(100, 50);
 	glutInitWindowSize(600, 600);
-	glutCreateWindow("G Test");
+	glutCreateWindow("Solar System");
 }
 
 //bind callback functions to glut

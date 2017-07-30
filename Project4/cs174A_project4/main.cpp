@@ -273,7 +273,7 @@ void initGlut(int& argc, char** argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(100, 50);
 	glutInitWindowSize(1600, 800);
-	glutCreateWindow("G Test");
+	glutCreateWindow("Textures");
 	glutFullScreen();
 
 }
