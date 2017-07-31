@@ -1,7 +1,7 @@
 # cs174a-projects
 **Fall 2011 UCLA Graphics I Class Projects**
 
-Series of projects produced for the 2011 UCLA Graphics I class culminating in a final project at the end of the term, which found [here](https://github.com/gkjohnson/cs174a-term-project). 
+Series of projects produced for the 2011 UCLA Graphics I class culminating in a final project at the end of the term, which can be found [here](https://github.com/gkjohnson/cs174a-term-project). 
 
 ## Projects
 ### [Fractal Visualization](/Fractal%20Visualization)
