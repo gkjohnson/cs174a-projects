@@ -22,7 +22,7 @@ Learning euler rotations in 3d with cubes and camera movement.
 ### [Texture Sampling](/Texture%20Sampling)
 ![texture sample](/docs/mipmaps.png)
 
-Learning full screen rendering and texture sampling techniques mipmaps and uv tiling.
+Learning full screen rendering and texture sampling techniques, such as mipmapping and uv tiling.
 
 ### [3D Collision Test](/3d%20Collision%20Test)
 ![3d collision](/docs/animated/collision-test.gif)
