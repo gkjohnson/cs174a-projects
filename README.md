@@ -27,4 +27,4 @@ Learning full screen rendering and texture sampling techniques mipmaps and uv ti
 ### [3D Collision Test](/3d%20Collision%20Test)
 ![3d collision](/docs/animated/collision-test.gif)
 
-Initial proof of concept for final project showing AABB collision detection and basic physics.
+Initial proof of concept for final project showing AABB collision detection and basic physics, which were eventually used in our [CS174A Term Project](https://github.com/gkjohnson/cs174a-term-project).
